@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharath Shankar M - Portfolio & Resume</title>
+    <!-- By Sharath Shankar M <br>USN:1JS23CS154 -->
+   
+    <style>
+    
+        @import url('[https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap)');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+
+        /* Style for the active navigation button */
+        .nav-button-active {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            color: white;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.5); /* Shadow matching the color */
+        }
+
+        /* Transition for smooth page switching */
+        .page-content {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Custom styles for the Home Page navigation cards */
+        .home-card {
+            @apply p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer flex flex-col items-center text-center;
+        }
+
+        .skill-tag {
+            @apply inline-block text-xs font-semibold px-3 py-1 rounded-full hover:shadow-sm transition duration-150 cursor-default;
+            /* Default styles for specific skills */
+            background-color: rgb(219, 234, 254); /* blue-100 */
+            color: rgb(29, 78, 216); /* blue-800 */
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <div id="app" class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+
+        <!-- Header & Navigation -->
+        <header class="p-6 bg-gray-900 text-white shadow-lg">
+            <h1 class="text-3xl font-extrabold tracking-tight">
+                Sharath Shankar M
+            </h1>
+            <p class="mt-1 text-gray-300 text-lg">Welcome</p>
+
+            <!-- Navigation Tabs -->
+            <nav class="mt-4 flex space-x-4">
+                <button id="nav-home" onclick="setHash('home')" class="nav-button py-2 px-4 rounded-lg font-semibold text-sm transition duration-300 hover:bg-blue-600 hover:text-white border border-transparent">
+                    HOME
+                </button>
+                <button id="nav-resume" onclick="setHash('resume')" class="nav-button py-2 px-4 rounded-lg font-semibold text-sm transition duration-300 hover:bg-blue-600 hover:text-white border border-transparent">
+                    RESUME
+                </button>
+                <button id="nav-biodata" onclick="setHash('biodata')" class="nav-button py-2 px-4 rounded-lg font-semibold text-sm transition duration-300 hover:bg-blue-600 hover:text-white border border-transparent">
+                    BIO-DATA
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="p-6 sm:p-8">
+
+            <!-- HOME Page Content (New Welcome Page with Links) -->
+            <section id="home-page" class="page-content hidden">
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 text-center">Welcome to My Portfolio</h2>
+                <p class="text-lg text-gray-700 leading-relaxed text-center max-w-2xl mx-auto mb-8">
+                    Hello! I am Sharath Shankar M, a dedicated Computer Science and Engineering student. Explore my academic journey, skills, projects, and personal details below.
+                </p>
+
+                <!-- Navigation Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Resume Card -->
+                    <div class="home-card bg-blue-50 border-b-4 border-blue-500" onclick="setHash('resume')">
+                        <svg class="w-10 h-10 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">My Professional Resume</h3>
+                        <p class="text-sm text-gray-600">View my technical skills (Java, C, HTML/CSS), academic projects, and education history.</p>
+                        <button class="mt-4 bg-blue-600 text-white py-2 px-6 rounded-full font-semibold hover:bg-blue-700 transition duration-150">
+                            View Resume
+                        </button>
+                    </div>
+
+                    <!-- Bio-Data Card -->
+                    <div class="home-card bg-green-50 border-b-4 border-green-500" onclick="setHash('biodata')">
+                        <svg class="w-10 h-10 text-green-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-3"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold text-green-700 mb-2">Personal & Academic Bio-Data</h3>
+                        <p class="text-sm text-gray-600">Find core information, academic results (10th, PU), contact details, and hobbies.</p>
+                        <button class="mt-4 bg-green-600 text-white py-2 px-6 rounded-full font-semibold hover:bg-green-700 transition duration-150">
+                            View Bio-Data
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESUME Page Content -->
+            <section id="resume-page" class="page-content hidden">
+                <h2 class="text-2xl font-bold border-b-2 pb-2 mb-6 text-gray-800">Professional Resume</h2>
+
+                <!-- Personal Information -->
+                <div class="mb-8 p-4 bg-blue-50 rounded-lg">
+                    <h3 class="text-xl font-bold border-l-4 border-blue-600 pl-3 mb-4 text-blue-800">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-2 text-gray-700">
+                        <p class="font-semibold md:col-span-1">Name:</p>
+                        <p class="md:col-span-2">Sharath Shankar M</p>
+
+                        <p class="font-semibold md:col-span-1">Email:</p>
+                        <p class="md:col-span-2 text-blue-600 font-medium">sharath182005@gmail.com</p>
+
+                        <p class="font-semibold md:col-span-1">Phone:</p>
+                        <p class="md:col-span-2">9483433791</p>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold border-l-4 border-blue-600 pl-3 mb-4 text-gray-800">Education</h3>
+                    <ul class="space-y-4">
+                        <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <h4 class="text-lg font-semibold text-blue-600">B.E. in Computer Science and Engineering</h4>
+                            <p class="text-gray-700">JSS Academy of Technical Education, Bengaluru</p>
+                            <p class="text-sm text-gray-500">Currently in 3rd Year</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Skills Section -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold border-l-4 border-blue-600 pl-3 mb-4 text-gray-800">Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-green-100 text-green-800">Java</span>
+                        <span class="skill-tag bg-green-100 text-green-800">C</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag bg-purple-100 text-purple-800">Prompt Engineering</span>
+                        <span class="skill-tag bg-red-100 text-red-800">Power Bi</span>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold border-l-4 border-blue-600 pl-3 mb-4 text-gray-800">Projects</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow hover:shadow-lg transition">
+                            <h4 class="text-lg font-semibold text-blue-700">AI Interview Preparation Tool (In Progress)</h4>
+                            <p class="text-sm text-gray-600 mt-2">
+                                Currently developing an AI-powered preparation tool designed to help users overcome interview stage fear. 
+                                The tool simulates a real interview environment, generating dynamic, field-specific questions in real-time. 
+                                Upon completion, it provides a comprehensive performance summary to aid in skill improvement and build confidence for real-world interviews.
+                            </p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BIO-DATA Page Content (Consolidated into one box with headings) -->
+            <section id="biodata-page" class="page-content hidden">
+                <h2 class="text-2xl font-bold border-b-2 pb-2 mb-6 text-gray-800">Personal Bio-Data</h2>
+
+                <!-- Consolidated Content Box (Using Yellow Theme) -->
+                <div class="p-6 bg-yellow-50 rounded-xl shadow-2xl border-l-8 border-yellow-400 space-y-8">
+
+                    <!-- 1. Core Information -->
+                    <div class="border-b pb-4 border-yellow-200">
+                        <h3 class="text-xl font-extrabold mb-3 text-yellow-800">1. Core Information</h3>
+                        <table class="w-full text-gray-700 text-base">
+                            <tbody>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium w-1/3">Full Name</td>
+                                    <td class="py-2 font-bold">Sharath Shankar M</td>
+                                </tr>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium">Father's Name</td>
+                                    <td class="py-2">Shankar M</td>
+                                </tr>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium">Age</td>
+                                    <td class="py-2">21 years</td>
+                                </tr>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium">Date of Birth (DOB)</td>
+                                    <td class="py-2">18-02-2005</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">Nationality</td>
+                                    <td class="py-2">Indian</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 2. Academic Details -->
+                    <div class="border-b pb-4 border-yellow-200">
+                        <h3 class="text-xl font-extrabold mb-3 text-yellow-800">2. Academic Details</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <!-- Engineering -->
+                            <div>
+                                <p class="font-semibold text-lg text-gray-800">B.E. in Computer Science and Engineering</p>
+                                <p class="text-gray-700">JSS Academy of Technical Education, Bengaluru (JSSATEB)</p>
+                                <p class="text-sm text-gray-600">Currently in 3rd year. USN: 1JS23CS154</p>
+                            </div>
+                            <!-- PU -->
+                            <div>
+                                <p class="font-semibold text-lg text-gray-800">Secondary Schooling (PU)</p>
+                                <p class="text-gray-700">Narayana College</p>
+                                <p class="text-sm text-gray-600">Securing 81%.</p>
+                            </div>
+                            <!-- Schooling -->
+                            <div>
+                                <p class="font-semibold text-lg text-gray-800">10th Grade / Schooling</p>
+                                <p class="text-gray-700">Orchids the International School</p>
+                                <p class="text-sm text-gray-600">Securing 80%.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Contact Details -->
+                    <div class="border-b pb-4 border-yellow-200">
+                        <h3 class="text-xl font-extrabold mb-3 text-yellow-800">3. Contact Details</h3>
+                        <table class="w-full text-gray-700 text-base">
+                            <tbody>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium w-1/3">Phone Number</td>
+                                    <td class="py-2 font-mono">9483433791</td>
+                                </tr>
+                                <tr class="border-b border-yellow-100">
+                                    <td class="py-2 font-medium align-top">Address</td>
+                                    <td class="py-2">219/2 Divya Jyothi Nagadevanahaali, <br>Bengaluru</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">Pincode</td>
+                                    <td class="py-2">560056</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 4. Hobbies -->
+                    <div>
+                        <h3 class="text-xl font-extrabold mb-3 text-yellow-800">4. Hobbies</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                            <li>Trekking and exploring mountains.</li>
+                            <li>Hitting the Gym (Fitness).</li>
+                            <li>Adventure trips .</li>
+                            <li>Cooking</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center pt-4 text-lg font-bold text-gray-800">
+                        Thank You.
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="p-4 bg-gray-100 text-center text-sm text-gray-500 border-t">
+            &copy; By Sharath Shankar M. 
+        </footer>
+    </div>
+
+    <script>
+        // Get references to all pages
+        const homePage = document.getElementById('home-page');
+        const resumePage = document.getElementById('resume-page');
+        const biodataPage = document.getElementById('biodata-page');
+        const navButtons = document.querySelectorAll('.nav-button');
+
+        /**
+         * Sets the URL hash (e.g., #resume), which triggers the hashchange event to navigate.
+         * @param {string} pageId - The ID of the page to navigate to ('home', 'resume', or 'biodata').
+         */
+        function setHash(pageId) {
+            window.location.hash = '#' + pageId;
+        }
+
+        /**
+         * Function to switch between pages based on the URL hash.
+         */
+        function updatePageFromHash() {
+            // Get the hash from the URL and remove the '#' symbol. Defaults to 'home' if no hash exists.
+            const hash = window.location.hash.replace('#', '');
+            let pageId = 'home'; 
+
+            // Determine which page ID is requested
+            if (hash === 'resume') {
+                pageId = 'resume';
+            } else if (hash === 'biodata') {
+                pageId = 'biodata';
+            } else if (hash === 'home') {
+                pageId = 'home';
+            }
+
+            // 1. Hide all pages
+            [homePage, resumePage, biodataPage].forEach(page => {
+                // Ensure the element exists before trying to hide it
+                if (page) page.classList.add('hidden');
+            });
+
+            // 2. Remove active class from all navigation buttons
+            navButtons.forEach(button => {
+                button.classList.remove('nav-button-active');
+            });
+
+            // 3. Find the element to show and the button to activate
+            let currentPageElement;
+            let currentNavButton;
+
+            switch (pageId) {
+                case 'resume':
+                    currentPageElement = resumePage;
+                    currentNavButton = document.getElementById('nav-resume');
+                    break;
+                case 'biodata':
+                    currentPageElement = biodataPage;
+                    currentNavButton = document.getElementById('nav-biodata');
+                    break;
+                case 'home':
+                default:
+                    currentPageElement = homePage;
+                    currentNavButton = document.getElementById('nav-home');
+                    break;
+            }
+
+            // 4. Show the selected page and mark the button as active
+            if (currentPageElement) currentPageElement.classList.remove('hidden');
+            if (currentNavButton) currentNavButton.classList.add('nav-button-active');
+        }
+
+        // Listen for hash changes (browser back/forward button, or manual hash change)
+        window.addEventListener('hashchange', updatePageFromHash);
+
+        // Initialize the app by checking the hash on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // If the URL has no hash, set it to 'home' to load the home page first
+            if (!window.location.hash) {
+                window.location.hash = '#home';
+            }
+            // Manually call the update function once on load
+            updatePageFromHash();
+        });
+    </script>
+</body>
+</html>
